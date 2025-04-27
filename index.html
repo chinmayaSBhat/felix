@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FELIX | Recruitment &amp; financial services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* -------------------------------------------------- */
+        /* BASE STYLES                     */
+        /* -------------------------------------------------- */
+        html {
+            font-size: 16px;
+            /* Set a base font size for rem units */
+            scroll-behavior: smooth;
+            /* Enable smooth scrolling for anchor links */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            /* Slightly softer background */
+            color: #373a3c;
+            /* Darker, more professional text color */
+            line-height: 1.7;
+            /* Improved default line height for readability */
+            margin: 0;
+            /* Reset default body margin */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            /* Prevent extra space below inline images */
+        }
+
+        section {
+            padding: 80px 0;
+            /* Increased vertical padding for more breathing room */
+        }
+
+        /* -------------------------------------------------- */
+        /* NAVIGATION                     */
+        /* -------------------------------------------------- */
+        .navbar {
+            padding: 1rem 0;
+            /* Use rem for padding */
+            background-color: #fff;
+            /* Solid white background for a clean look */
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+            /* Subtle box shadow */
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            /* Slightly larger brand text */
+            font-weight: 600;
+            color: #373a3c;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 0.75rem 1rem;
+            /* Adjust link padding */
+            font-size: 1rem;
+            color: #495057;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #007bff;
+            /* Consistent primary color for active/hover */
+        }
+
+        /* -------------------------------------------------- */
+        /* CAROUSEL                       */
+        /* -------------------------------------------------- */
+        .carousel-item {
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 80vh;
+            /* Adjust height as needed */
+            object-fit: cover;
+            /* Ensure images cover the area without distortion */
+        }
+
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Slightly darker overlay */
+            border-radius: 0.25rem;
+        }
+
+        .carousel-caption h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 60vh;
+            }
+
+            .carousel-caption h1 {
+                font-size: 2rem;
+            }
+
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-item img {
+                height: 50vh;
+            }
+
+            .carousel-caption {
+                padding: 1rem;
+            }
+
+            .carousel-caption h1 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* -------------------------------------------------- */
+        /* SECTIONS                       */
+        /* -------------------------------------------------- */
+        /* You can add a common class for section styling if needed */
+
+        /* Services Section */
+        .service-card {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-bottom: 1.5rem;
+            /* Add spacing between cards */
+        }
+
+        .service-card:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .box-icon-carousel {
+            font-size: 2rem;
+            /* Slightly larger for better visibility */
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .box-icon {
+            font-size: 4rem;
+            /* Adjust size as needed */
+            color: #007bff;
+            margin-bottom: 1.5rem;
+        }
+
+        .bg-light-ban {
+            background-color: #fff;
+            /* Use white for a cleaner look */
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            height: auto;
+            /* Adjust height to content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg-light-ban:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .bg-light-ban h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #373a3c;
+        }
+
+        .bg-light-ban p {
+            color: #495057;
+        }
+
+        /* About Us Section */
+        #about {
+            background-color: #f8f9fa;
+            /* Very light gray for subtle contrast */
+            padding: 80px 0;
+        }
+
+        .about-heading {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: #373a3c;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            /* Center the heading */
+        }
+
+        .about-description {
+            font-size: 1.125rem;
+            color: #495057;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #495057;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 1.25rem;
+            text-align: justify;
+        }
+
+        .row {
+            margin-bottom: 2rem;
+        }
+
+        .col-lg-6 {
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-heading {
+                font-size: 2.25rem;
+            }
+
+            .about-description {
+                font-size: 1rem;
+            }
+
+            .about-text {
+                font-size: 0.9rem;
+            }
+
+            .col-lg-6 {
+                margin-bottom: 1.5rem;
+                /* Add spacing between columns on smaller screens */
+            }
+        }
+
+        /* Vision & Mission Section */
+        #vision-mission {
+            background-color: #fff;
+            /* Clean white background */
+            padding: 80px 0;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #373a3c;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .intro-text {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            max-width: 85%;
+            /* Adjust max-width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .vision-heading,
+        .mission-heading {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #373a3c;
+            margin-bottom: 1.25rem;
+            text-align: left;
+        }
+
+        .vision-text,
+        .mission-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #495057;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .mission-list {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #495057;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .mission-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .mission-list li::before {
+            content: "•";
+            color: #007bff;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .vision-heading,
+            .mission-heading {
+                font-size: 1.75rem;
+            }
+
+            .vision-text,
+            .mission-text {
+                font-size: 0.9rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+                max-width: 90%;
+            }
+        }
+
+        /* -------------------------------------------------- */
+        /* BUTTONS                        */
+        /* -------------------------------------------------- */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid transparent;
+            /* Ensure consistent size */
+            cursor: pointer;
+            line-height: 1.5;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-outline-primary {
+            color: #007bff;
+            background-color: transparent;
+            border-color: #007bff;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+        .btn-outline-primary:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+
+        /* -------------------------------------------------- */
+        /* FOOTER                         */
+        /* -------------------------------------------------- */
+        footer {
+            background-color: #f8f9fa;
+            /* Light gray footer */
+            border-top: 1px solid #e0e0e0;
+            padding: 2rem 0;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        /* -------------------------------------------------- */
+        /* BACK TO TOP BUTTON                 */
+        /* -------------------------------------------------- */
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: none;
+            z-index: 99;
+            border-radius: 0.375rem;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #btn-back-to-top:hover {
+            opacity: 1;
+        }
+
+        #btn-back-to-top:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container d-flex justify-content-between">
+            <!-- Brand with larger circular logo -->
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+                <img src="images/logo.jpg" alt="Felix Logo" width="50" height="50" class="rounded-circle me-3">
+                <div class="d-flex flex-column">
+                    <span style="font-size: 1.5rem;">Felix <small style="font-size: 0.8rem;">Services</small></span>
+                    
+                </div>
+            </a>
+            <!-- Toggler on the right -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Links right aligned -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vision-mission">Vision & Mission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Carousel -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: 56px;">
+        <div class="carousel-inner position-relative">
+
+            <div class="carousel-item active">
+                <img src="images/car11.jpg" class="d-block w-100 img-fluid" alt="Financial Solutions"
+                    style="height: 50vh; object-fit: cover; object-position: center;">
+
+                <!-- Overlay Content -->
+                <div class="carousel-caption text-start mb-5"
+                    style="left: 10%; bottom: 10%; top: auto; transform: none;">
+                    <h1 class="text-white fw-bold mb-3">FELIX: Empowering Your Business</h1>
+                    <p class="lead">At Felix Services, we go beyond service delivery — we become your trusted partners
+                        in growth and success.</p>
+                    <a href="#about" class="btn btn-primary btn-lg" role="button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/car12.jpg" class="d-block w-100 img-fluid" alt="Financial Solutions"
+                    style="height: 50vh; object-fit: cover; object-position: center;">
+
+                <!-- Overlay Content -->
+                <div class="carousel-caption text-start mb-5"
+                    style="left: 10%; bottom: 10%; top: auto; transform: none;">
+                    <h1 class="text-white fw-bold mb-3">FELIX: Empowering Your Business</h1>
+                    <p class="lead">Partner with Felix Services for unparalleled recruitment, HR, and financial
+                        excellence, tailored to your business vision.</p>
+                    <a href="#about" class="btn btn-primary btn-lg" role="button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/car13.jpg" class="d-block w-100 img-fluid" alt="Financial Solutions"
+                    style="height: 50vh; object-fit: cover; object-position: center;">
+
+                <!-- Overlay Content -->
+                <div class="carousel-caption text-start mb-5"
+                    style="left: 10%; bottom: 10%; top: auto; transform: none;">
+                    <h1 class="text-white fw-bold mb-3">FELIX: Empowering Your Business</h1>
+                    <p class="lead">Partner with Felix Services for unparalleled recruitment, HR, and financial
+                        excellence, tailored to your business vision.</p>
+                    <a href="#about" class="btn btn-primary btn-lg" role="button">Learn More</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+
+
+    <!-- Services Strip Carousel -->
+    <!-- Services Carousel Section -->
+    <section id="services-carousel" class="py-4 bg-light shadow-sm"
+        style="margin: 0 0 40px; border-radius: 8px; overflow: hidden;">
+        <div class="container">
+            <!-- <h2 class="text-center mb-4">Our Services</h2> -->
+            <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#serviceModal1"
+                                    class="text-decoration-none">
+                                    <div class="bg-light-ban shadow text-center p-3">
+                                        <i class="bi bi-briefcase-fill box-icon-carousel"></i>
+                                        <h6 class="mt-3 text-dark">Recruitment Services</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#serviceModal2"
+                                    class="text-decoration-none">
+                                    <div class="bg-light-ban shadow text-center p-3">
+                                        <i class="bi bi-people-fill box-icon-carousel"></i>
+                                        <h6 class="mt-3 text-dark">HR Advisory</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#serviceModal3"
+                                    class="text-decoration-none">
+                                    <div class="bg-light-ban shadow text-center p-3">
+                                        <i class="bi bi-journal-text box-icon-carousel"></i>
+                                        <h6 class="mt-3 text-dark">Accounting &amp; Book-Keeping</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#serviceModal4"
+                                    class="text-decoration-none">
+                                    <div class="bg-light-ban shadow text-center p-3">
+                                        <i class="bi bi-calculator-fill box-icon-carousel"></i>
+                                        <h6 class="mt-3 text-dark">Taxation Consulting</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#serviceModal5"
+                                    class="text-decoration-none">
+                                    <div class="bg-light-ban shadow text-center p-3">
+                                        <i class="bi bi-clipboard-data-fill box-icon-carousel"></i>
+                                        <h6 class="mt-3 text-dark">Audit &amp; Assurance</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#serviceModal6"
+                                    class="text-decoration-none">
+                                    <div class="bg-light-ban shadow text-center p-3">
+                                        <i class="bi bi-bank box-icon-carousel"></i>
+                                        <h6 class="mt-3 text-dark">Corporate Law &amp; Regulatory</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#serviceModal7"
+                                    class="text-decoration-none">
+                                    <div class="bg-light-ban shadow text-center p-3">
+                                        <i class="bi bi-shield-lock-fill box-icon-carousel"></i>
+                                        <h6 class="mt-3 text-dark">Legal Aid &amp; Assistance</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#serviceModal8"
+                                    class="text-decoration-none">
+                                    <div class="bg-light-ban shadow text-center p-3">
+                                        <i class="bi bi-grid-3x3-gap-fill box-icon-carousel"></i>
+                                        <h6 class="mt-3 text-dark">Custom Solutions</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel controls
+        <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+   -->
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        .services-strip {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .services-strip::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar on Chrome/Safari */
+        }
+
+        .services-strip>.bg-light-ban {
+            flex: 0 0 auto;
+            width: 25%;
+            /* 4 tiles in one full width = 100/4 = 25% each */
+            margin-right: 16px;
+            /* Space between tiles */
+        }
+
+        @media (max-width: 768px) {
+            .services-strip>.bg-light-ban {
+                width: 50%;
+                /* 2 tiles on tablet */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-strip>.bg-light-ban {
+                width: 80%;
+                /* 1 tile on mobile */
+            }
+        }
+    </style>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="about-heading">About Us</h2>
+                    <p class="about-description">Felix Services is a leading provider of recruitment and business
+                        support solutions based in Bangalore. We specialize in both permanent and temporary workforce
+                        management, offering tailored staffing solutions to organizations across diverse industries.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="about-text">In addition to our recruitment expertise, we are recognized for our Virtual
+                        Financial Services, crafted to meet the demands of the global market. Our financial solutions
+                        are designed to empower startups, small and medium enterprises (SMEs), and large corporations,
+                        enabling them to navigate the intricacies of financial management with seamless precision.</p>
+                    <p class="about-text">We provide expert services in areas such as taxation, accounting, and
+                        financial planning, helping our clients grow and remain compliant with global standards. Whether
+                        you are a startup or a corporate entity, our solutions are designed to drive your financial
+                        stability and growth.</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="about-text">Our services span critical aspects of business management, allowing us to
+                        support our clients at every stage of their journey—from inception and growth to expansion and
+                        sustainable success. We understand the evolving needs of businesses and offer flexible solutions
+                        that are adaptive to change.</p>
+                    <p class="about-text">At Felix Services, we are committed to delivering high-quality, bespoke
+                        solutions that empower businesses to flourish in an ever-evolving marketplace. Our team of
+                        professionals is dedicated to ensuring that your organization thrives in a competitive
+                        landscape, guided by our expertise in recruitment and financial services.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p class="about-text">We pride ourselves on being more than just service providers; we are strategic
+                        partners invested in your growth. With a dedicated team of expert recruiters and seasoned
+                        financial professionals, we ensure the right talent and financial guidance is provided to help
+                        your organization reach its full potential.</p>
+                    <p class="about-text">Our professionals include Chartered Accountants, Cost Accountants, Company
+                        Secretaries, and Advocates, each with years of experience and a deep understanding of their
+                        respective fields. They are committed to delivering practical, customized solutions with an
+                        unwavering focus on client satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light py-5">
+        <!-- Services Section -->
+        <section id="services" class="bg-light py-5">
+            <div class="container text-center">
+                <h2>Our Services</h2>
+                <p>Explore what we offer to elevate your business journey.</p>
+
+                <div class="row mt-5">
+                    <!-- Tile 1 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="bg-light-ban shadow" data-bs-toggle="modal" data-bs-target="#serviceModal1"
+                            style="cursor:pointer;">
+                            <i class="bi bi-briefcase-fill box-icon"></i>
+                            <h6 class="mt-3 text-dark">Recruitment Services</h6>
+                        </div>
+                    </div>
+                    <!-- Tile 2 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="bg-light-ban shadow" data-bs-toggle="modal" data-bs-target="#serviceModal2"
+                            style="cursor:pointer;">
+                            <i class="bi bi-people-fill box-icon"></i>
+                            <h6 class="mt-3 text-dark">HR Advisory</h6>
+                        </div>
+                    </div>
+                    <!-- Tile 3 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="bg-light-ban shadow" data-bs-toggle="modal" data-bs-target="#serviceModal3"
+                            style="cursor:pointer;">
+                            <i class="bi bi-journal-text box-icon"></i>
+                            <h6 class="mt-3 text-dark">Accounting &amp; Book-Keeping</h6>
+                        </div>
+                    </div>
+                    <!-- Tile 4 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="bg-light-ban shadow" data-bs-toggle="modal" data-bs-target="#serviceModal4"
+                            style="cursor:pointer;">
+                            <i class="bi bi-calculator-fill box-icon"></i>
+                            <h6 class="mt-3 text-dark">Taxation Consulting</h6>
+                        </div>
+                    </div>
+                    <!-- Tile 5 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="bg-light-ban shadow" data-bs-toggle="modal" data-bs-target="#serviceModal5"
+                            style="cursor:pointer;">
+                            <i class="bi bi-clipboard-data-fill box-icon"></i>
+                            <h6 class="mt-3 text-dark">Audit &amp; Assurance</h6>
+                        </div>
+                    </div>
+                    <!-- Tile 6 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="bg-light-ban shadow" data-bs-toggle="modal" data-bs-target="#serviceModal6"
+                            style="cursor:pointer;">
+                            <i class="bi bi-bank box-icon"></i>
+                            <h6 class="mt-3 text-dark">Corporate Law &amp; Regulatory</h6>
+                        </div>
+                    </div>
+                    <!-- Tile 7 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="bg-light-ban shadow" data-bs-toggle="modal" data-bs-target="#serviceModal7"
+                            style="cursor:pointer;">
+                            <i class="bi bi-shield-lock-fill box-icon"></i>
+                            <h6 class="mt-3 text-dark">Legal Aid &amp; Assistance</h6>
+                        </div>
+                    </div>
+                    <!-- Tile 8 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="bg-light-ban shadow" data-bs-toggle="modal" data-bs-target="#serviceModal8"
+                            style="cursor:pointer;">
+                            <i class="bi bi-grid-3x3-gap-fill box-icon"></i>
+                            <h6 class="mt-3 text-dark">Custom Solutions</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modals -->
+        <!-- Modal 1: Recruitment Services -->
+        <div class="modal fade" id="serviceModal1" tabindex="-1" aria-labelledby="serviceModalLabel1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel1">Recruitment Services</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        At Felix, we specialize in connecting top-tier talent with exceptional companies. Our
+                        recruitment services are designed to streamline the hiring process, reduce time-to-fill, and
+                        ensure the right fit every time. We offer flexible recruitment solutions to meet your specific
+                        needs.<br><br>
+
+                        <strong>Our recruitment services include:</strong><br><br>
+                        <ul>
+                            <li><strong>Permanent Staffing:</strong> Building long-term workforces with top talent.</li>
+                            <li><strong>Temporary & Contract Staffing:</strong> Flexible staffing solutions for
+                                short-term needs.</li>
+                            <li><strong>Executive Search:</strong> Sourcing senior-level leaders for your organization.
+                            </li>
+                            <li><strong>Volume Hiring:</strong> Efficient recruitment for large-scale hiring projects.
+                            </li>
+                            <li><strong>Industry-Specific Recruitment:</strong> Specialized recruitment across various
+                                sectors.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 2: HR Services -->
+        <div class="modal fade" id="serviceModal2" tabindex="-1" aria-labelledby="serviceModalLabel2"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel2">HR Services</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        We provide comprehensive HR services designed to support your company's growth by optimizing the
+                        employee lifecycle. Our solutions ensure compliance and enhance employee engagement.<br><br>
+
+                        <strong>Our HR services include:</strong><br><br>
+                        <ul>
+                            <li><strong>Offer Letter Issuance & Orientation:</strong> Seamless onboarding and employee
+                                introductions.</li>
+                            <li><strong>Document Collection & Verification:</strong> Accurate documentation and
+                                background checks.</li>
+                            <li><strong>Onboarding Assistance:</strong> Smooth integration into your company culture.
+                            </li>
+                            <li><strong>Payroll and Benefits Management:</strong> Handling salaries, benefits, and legal
+                                compliance.</li>
+                            <li><strong>Exit Management:</strong> Professional management of resignation, clearance, and
+                                exit interviews.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 3: Accounting & Book-Keeping -->
+        <div class="modal fade" id="serviceModal3" tabindex="-1" aria-labelledby="serviceModalLabel3"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel3">Accounting &amp; Book-Keeping</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Our accounting and bookkeeping services offer your company clarity, compliance, and confidence
+                        in its financial reporting. From bookkeeping to complex financial advisory, we provide solutions
+                        that give you peace of mind.<br><br>
+
+                        <strong>Our services include:</strong><br><br>
+                        <ul>
+                            <li><strong>Financial Accounting & Advisory:</strong> Expert guidance for financial
+                                decision-making.</li>
+                            <li><strong>Bookkeeping Services:</strong> Accurate record-keeping for small and large
+                                businesses.</li>
+                            <li><strong>Payroll Processing:</strong> Timely and compliant payroll solutions.</li>
+                            <li><strong>Financial Statement Preparation:</strong> Detailed reports for stakeholders and
+                                tax authorities.</li>
+                            <li><strong>Tax Preparation & Planning:</strong> Ensuring tax efficiency and compliance.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 4: Taxation & Consultancy -->
+        <div class="modal fade" id="serviceModal4" tabindex="-1" aria-labelledby="serviceModalLabel4"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel4">Taxation &amp; Consultancy</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Our taxation and consultancy services are designed to optimize your company's tax position,
+                        ensuring compliance and minimizing tax liabilities. From tax planning to complex dispute
+                        resolution, we have you covered.<br><br>
+
+                        <strong>Our services include:</strong><br><br>
+                        <ul>
+                            <li><strong>Corporate Tax Advisory:</strong> Strategic advice to manage and minimize
+                                corporate tax exposure.</li>
+                            <li><strong>Tax Planning & Optimization:</strong> Long-term strategies to optimize tax
+                                obligations.</li>
+                            <li><strong>Transfer Pricing Consulting:</strong> Ensuring compliance with international tax
+                                regulations.</li>
+                            <li><strong>Tax Litigation & Dispute Resolution:</strong> Defending your interests in
+                                tax-related disputes.</li>
+                            <li><strong>Indian Accounting Standards (Ind AS):</strong> Expertise in local compliance and
+                                standards.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 5: Audit & Assurance -->
+        <div class="modal fade" id="serviceModal5" tabindex="-1" aria-labelledby="serviceModalLabel5"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel5">Audit &amp; Assurance</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Our audit and assurance services provide an independent assessment of your financial records and
+                        systems. We deliver value-added insights to improve your operational efficiency and maintain
+                        stakeholder confidence.<br><br>
+
+                        <strong>Our audit services include:</strong><br><br>
+                        <ul>
+                            <li><strong>Statutory & Internal Audits:</strong> Ensure compliance with regulatory
+                                requirements.</li>
+                            <li><strong>Tax & Transfer Pricing Audits:</strong> In-depth review of tax-related matters.
+                            </li>
+                            <li><strong>Stock & Retail Audits:</strong> Detailed examination of inventory management and
+                                retail operations.</li>
+                            <li><strong>Concurrent & CSR Audits:</strong> Real-time audits and CSR activity
+                                verification.</li>
+                            <li><strong>Secretarial & Trust Audits:</strong> Legal and regulatory compliance audits for
+                                trust funds and corporate entities.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 6: Corporate Law & Regulatory Services -->
+        <div class="modal fade" id="serviceModal6" tabindex="-1" aria-labelledby="serviceModalLabel6"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel6">Corporate Law &amp; Regulatory Services</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        We provide expert legal services to help businesses navigate the complex regulatory landscape.
+                        Whether it’s about starting, expanding, or shutting down a business, our team offers clear legal
+                        pathways.<br><br>
+
+                        <strong>Our corporate law services include:</strong><br><br>
+                        <ul>
+                            <li><strong>Business Registration & Licensing:</strong> Support in registering new
+                                businesses and obtaining necessary licenses.</li>
+                            <li><strong>Business Restructuring & Strategy:</strong> Guidance on mergers, acquisitions,
+                                and corporate strategy.</li>
+                            <li><strong>FEMA, RBI & SEBI Compliance:</strong> Compliance with financial regulations for
+                                foreign investments and businesses.</li>
+                            <li><strong>Insolvency & Bankruptcy Services:</strong> Legal assistance for distressed
+                                companies.</li>
+                            <li><strong>Event-Based Compliance:</strong> Handling ad-hoc compliance for various
+                                corporate needs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 7: Legal Aid & Assistance -->
+        <div class="modal fade" id="serviceModal7" tabindex="-1" aria-labelledby="serviceModalLabel7"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel7">Legal Aid &amp; Assistance</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        We offer legal support for businesses in various areas such as dispute resolution, corporate
+                        governance, and compliance management. Our experienced legal team provides effective solutions
+                        to mitigate legal risks.<br><br>
+
+                        <strong>Our legal services include:</strong><br><br>
+                        <ul>
+                            <li><strong>Civil & Banking Legal Support:</strong> Assistance with civil disputes and
+                                banking-related matters.</li>
+                            <li><strong>Corporate & Employment Law:</strong> Help with governance, policies, and
+                                employment-related issues.</li>
+                            <li><strong>Cyber Law & Data Protection:</strong> Legal guidance on cybersecurity and data
+                                privacy compliance.</li>
+                            <li><strong>Dispute Resolution & Arbitration:</strong> Conflict management and resolution
+                                services.</li>
+                            <li><strong>Contract Drafting & Review:</strong> Expert legal support in drafting,
+                                reviewing, and managing contracts.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 8: Other Services -->
+        <div class="modal fade" id="serviceModal8" tabindex="-1" aria-labelledby="serviceModalLabel8"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel8">Custom Solutions</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        In addition to our core services, we offer a range of strategic solutions to enhance your
+                        business operations and growth potential. Our tailored services are designed to help your
+                        business scale with efficiency and intelligence.<br><br>
+
+                        <strong>Our Custom Solutions include:</strong><br><br>
+                        <ul>
+                            <li><strong>Startup Advisory & Virtual CFO:</strong> Offering expert advice and strategic
+                                financial management for startups.</li>
+                            <li><strong>Business Analysis & Cap Table Management:</strong> Analytical tools and support
+                                for business growth and ownership tracking.</li>
+                            <li><strong>ESOP Structuring:</strong> Custom-designed Employee Stock Option Plans.</li>
+                            <li><strong>Fundraising & Investor Relations:</strong> Support with raising capital and
+                                managing investor relations.</li>
+                            <li><strong>Internal Controls & Risk Management:</strong> Structuring policies and controls
+                                to minimize risks.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision-mission" class="py-5">
+        <div class="container">
+            <!-- Section Heading for Vision and Mission -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Vision & Mission</h2>
+                </div>
+            </div>
+
+            <!-- Introductory Statement -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <p class="intro-text">
+                        Our goal is to act as a catalyst for growth, helping our clients unlock their full potential by
+                        providing the expertise, talent, and financial insight they need to succeed in a fast-paced,
+                        competitive world.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Vision Section -->
+                <div class="col-lg-6 mb-4">
+                    <h3 class="text-center vision-heading">Vision Statement</h3>
+                    <p class="vision-text">
+                        At Felix Services, our vision is to become a globally recognized leader in providing innovative
+                        recruitment and virtual financial solutions. We aim to empower startups, SMEs, and large
+                        enterprises by offering dynamic and adaptable services that enable them to thrive in an
+                        ever-evolving global economy.
+                    </p>
+                    <p class="vision-text">
+                        We are committed to being the trusted partner that supports organizations in navigating the
+                        complexities of business management, offering tailored solutions that foster operational
+                        excellence, financial health, and long-term, sustainable growth.
+                    </p>
+                    <p class="vision-text">
+                        Our vision is not just to provide services, but to drive meaningful change for businesses across
+                        industries, ensuring that they are well-equipped to face the challenges and seize the
+                        opportunities presented by an increasingly dynamic market.
+                    </p>
+                </div>
+
+                <!-- Mission Section -->
+                <div class="col-lg-6 mb-4">
+                    <h3 class="text-center mission-heading">Mission Statement</h3>
+                    <p class="mission-text">
+                        Our mission at Felix Services is to empower businesses by providing exceptional recruitment and
+                        virtual financial solutions that drive business success at every stage of the business
+                        lifecycle. We are committed to:
+                    </p>
+                    <ul class="mission-list">
+                        <li><strong>Connecting organizations with the right talent:</strong> Offering personalized,
+                            reliable, and efficient hiring solutions—both permanent and temporary—to help businesses
+                            find the ideal candidates that drive their success.</li>
+                        <li><strong>Delivering financial empowerment:</strong> Providing tailored virtual financial
+                            services that guide startups, SMEs, and corporate entities in strategic decision-making,
+                            financial planning, and optimizing their fiscal health.</li>
+                        <li><strong>Building long-term relationships:</strong> Creating strong, lasting partnerships
+                            with our clients through trust, transparency, and a relentless pursuit of excellence in
+                            everything we do.</li>
+                        <li><strong>Supporting businesses through their growth stages:</strong> Offering scalable
+                            solutions designed to grow with your business—from its inception and growth phase to its
+                            expansion and long-term sustainability.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Contact Section -->
+    <form id="contact-form">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="user_name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+                <input type="email" class="form-control" name="user_email" placeholder="Your Email" required>
+            </div>
+        </div>
+        <div class="mb-3 mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+    </form>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function(){
+        emailjs.init("cq3xH_yPJEwPvdswS"); // 👈 replace with your public key
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop normal form submit
+
+        emailjs.sendForm('service_egssyth', 'template_coqdv1j', this)
+            .then(function(response) {
+                alert('Message sent successfully!'); // Success alert
+                document.getElementById('contact-form').reset(); // Clear form
+            }, function(error) {
+                alert('Failed to send message. Please try again.'); // Error alert
+            });
+    });
+</script>
+
+    <br><br>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 FELIX. All rights reserved.</p>
+            <p>Contact us at: info@felix.com</p>
+        </div>
+    </footer>
+    <!-- CSS for footer (optional) -->
+    <style>
+        footer {
+            background-color: rgb(134, 132, 132);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content p {
+            margin: 5px 0;
+        }
+    </style>
+
+    <!-- Scroll to Top Button -->
+    <button type="button" class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let mybutton = document.getElementById("btn-back-to-top");
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) mybutton.style.display = "block";
+            else mybutton.style.display = "none";
+        }
+        mybutton.addEventListener("click", () => { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; });
+    </script>
+    <!-- Footer Section -->
+    <!--  -->
+</body>
+
+</html>
