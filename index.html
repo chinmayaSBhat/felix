@@ -1340,7 +1340,6 @@
             color: white;
             text-align: center;
             padding: 10px;
-            position: fixed;
             bottom: 0;
             width: 100%;
         }
@@ -1349,7 +1348,16 @@
             margin: 5px 0;
         }
     </style>
-
+  < script>
+window. addEventListener( 'scroll', function () {
+const footer = document.getElementById ('page-footer');
+if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+footer.style.display = 'block'; // Show footer
+}
+else {
+footer.style.display = 'none'; // Hide footer
+}});
+</script>
     <!-- Scroll to Top Button -->
     <button type="button" class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top">
         <i class="bi bi-arrow-up"></i>
