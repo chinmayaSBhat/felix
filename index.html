@@ -39,7 +39,7 @@
         }
 
         section {
-            padding: 100px 0;
+            padding: 200px 0;
             /* Increased vertical padding for more breathing room */
         }
 
@@ -1310,13 +1310,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
     (function(){
-        emailjs.init("cq3xH_yPJEwPvdswS"); // 👈 replace with your public key
+        emailjs.init("oGbuwCIg0vwnEvRRy"); // 👈 replace with your public key
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Stop normal form submit
 
-        emailjs.sendForm('service_egssyth', 'template_coqdv1j', this)
+        emailjs.sendForm('service_5m7ww1i', 'template_fdqxf9s', this)
             .then(function(response) {
                 alert('Message sent successfully!'); // Success alert
                 document.getElementById('contact-form').reset(); // Clear form
